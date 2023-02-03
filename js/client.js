@@ -3,7 +3,8 @@ const user = document.getElementById('user');
 const password = document.getElementById('password');
 
 
-  async function login(url, data) {
+
+async function login(url, data) {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -16,6 +17,8 @@ const password = document.getElementById('password');
 
   button.addEventListener('click', () =>{
     init();
+    document.getElementById('log').style.display = 'none';
+    document.getElementById('error').style.display = 'none';
 })
 
   async function init() {
@@ -23,12 +26,10 @@ const password = document.getElementById('password');
         user: user.value,
         password: password.value,
     }).then(res => {
-        if(user.value && password.value ){
-            document.querySelector('log').style.display = 'block';
+        if( res.data == true ){
+            document.getElementById('log').style.display = 'block';
         }else{
-            let p = document.createElement('p');
-            p.innerHTML = 'Campos vacios';
-            document.querySelector('autenticacion').appendChild(p);
+            document.getElementById('error').style.display = 'block';
         }
     }).catch(error => {
         console.log(error);

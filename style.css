@@ -1,5 +1,25 @@
 .log{
     display: none;
+    margin: 0 auto;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+.error{
+    display: none;
+    margin: 0 auto;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+p{
+    margin: 0 auto;
+    margin-top: 50px;
+    color: white;
+    font-size: 1em;
+    text-align: center;
 }
 
 body{
